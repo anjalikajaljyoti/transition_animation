@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 2px solid red;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px;
+            border-radius: 20px;
+        }
+        .box {
+            /* border: 2px solid red; */
+            height: 300px;
+            width: 300px;
+            margin: 20px;
+            border-radius: 50%;
+            /* background-image: linear-gradient(red,yellow,blue); */
+
+            /*animation: rotate 2s infinite; */
+            /* animation: bounced 2s infinite */
+            /* animation: fatein 3s infinite; */
+            animation: fade-rotate 5s infinite ;
+
+        }
+        .box img {
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+        }
+
+       /* @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            180% {
+                transform: rotate(90deg);
+            }
+        } */
+
+        @keyframes bounced {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(-50px);
+            }
+            80% {
+                transform: translatey(80px);
+            }
+        }
+
+        /* @keyframes fatein {
+            0% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+
+            }
+            80% {
+                opacity: 0.7;
+
+            }
+        } */
+
+
+        /* used both fade in and roteate */
+
+        @keyframes fade-rotate {
+            0% {
+                opacity: 1.3;
+            }
+            30% {
+                transform: rotate(360deg);
+            }
+            80% {
+                opacity: 0.3;
+            }
+        }
+
+
+        .container1 {
+            border: 2px solid red;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px;
+            border-radius: 20px;
+
+        }
+        .box1 {
+            border: 2px solid red;
+            height: 300px;
+            width: 300px;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 4px 5px 7px rgb(223, 10, 10);
+            background-image: linear-gradient(red,yellow,blue);
+
+            /*transition */
+            transition: height 2s ease, width 3s ease-out, box-shadow 1s ease-in ,background-image 2s ease , transform 2s ease-in ;
+        }
+
+        .box1:hover {
+            height: 100px;
+            width: 100px;
+            box-shadow: 20px 20px 40px black;
+            background-image: linear-gradient(rgb(0, 132, 255),rgba(0, 255, 42, 0.527),rgb(238, 255, 0));
+            cursor: pointer;
+            transform: scale(1.2);
+
+        }
+
+        .container2 {
+            border: 2px solid red;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px;
+            border-radius: 20px;
+
+        }
+        .box2 {
+            background-color: rgb(124, 122, 241);
+            box-shadow: 10px 10px 10px rgb(56, 2, 250);
+            height: 300px;
+            width: 300px;
+            margin: 20px;
+            border-radius: 20px;
+            animation: bounced 2s infinite ;
+        }
+
+
+
+        /* loading  bar*/
+        .container3 {
+            border: 2px solid red;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px;
+            border-radius: 20px;
+
+        }
+        .box3 {
+            background-color: rgb(198, 194, 194);
+            box-shadow: 10px 10px 10px rgb(137, 109, 238);
+            height: 30px;
+            width: 300px;
+            margin: 20px;
+            border-radius: 20px;
+        }
+
+        .line {
+            height: 30px;
+            border-radius: 20px;
+            animation: loading 5s forwards cubic-bezier(0,0,0,0) infinite;
+            background-color: rgb(38, 3, 238);
+
+        }
+
+        @keyframes loading {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Animation</h1>
+        <div class="container">
+            <marquee behavior="scroll" direction="right">
+                <div class="box">
+                    <img src="img/img7.png" alt=""> 
+                </div>
+                <!-- <div class="box">
+                    <img src="img/img7.png" alt=""> 
+                </div>
+                <div class="box">
+                    <img src="img/img7.png" alt=""> 
+                </div> -->
+            </marquee>
+        </div>
+    </section>
+    <section>
+        <h1>Transition</h1>
+        <div class="container1">
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+    </section>
+    <section>
+        <div class="container2">
+            <div class="box2"></div>
+        </div>
+    </section>
+
+
+    <!-- loading  bar -->
+
+    <section>
+        <h1>Animayion</h1>
+        <div class="container3">
+            <h1>loading...</h1>
+            <div class="box3">
+                <div class="line"></div>
+            </div>
+            <div class="box3">
+                <div class="line"></div>
+            </div>
+            <div class="box3">
+                <div class="line"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
